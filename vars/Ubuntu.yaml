@@ -2,6 +2,7 @@
 # vars file for python (Ubuntu specific)
 
 _python_package_dependencies:
+  - git
   - build-essential
   - libssl-dev
   - libbz2-dev
