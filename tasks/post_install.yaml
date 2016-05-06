@@ -1,0 +1,20 @@
+---
+
+- name: Modify .bashrc
+  lineinfile: dest="~/.bashrc"
+              regexp="\.pyenvrc$"
+              line="source {{ python_pyenv_path }}/.pyenvrc"
+              state=present
+  become_user: "{{python_pyenv_owner}}"
+
+- name: Install Python interpreters "{{ python_pyenv_python_versions }}"
+  shell: . {{ pyenv_path }}/.pyenvrc && pyenv install {{ item }}
+         creates="{{ python_pyenv_path }}/versions/{{ item }}/bin/python"
+  with_items: "{{python_pyenv_python_versions}}"
+  become_user: "{{python_pyenv_owner}}"
+
+- name: Create virtual environments
+  shell: . {{ python_pyenv_path }}/.pyenvrc && pyenv virtualenv {{ item.py_version }} {{ item.venv_name }}
+         creates="{{ python_pyenv_path }}/versions/{{ item.venv_name }}/bin/python"
+  with_items: "{{python_pyenv_virtualenvs}}"
+  become_user: "{{python_pyenv_owner}}"
