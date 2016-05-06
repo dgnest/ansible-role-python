@@ -2,11 +2,9 @@
 
 - include: install.d/CentOS.yaml
   when: ansible_distribution == "CentOS"
-  tags: python
 
 - include: install.d/Ubuntu.yaml
   when: ansible_distribution == "Ubuntu"
-  tags: python
 
 - name: Install python PyEnv
   git:
@@ -14,7 +12,6 @@
     dest: "{{ python_pyenv_path }}"
     update: "{{python_pyenv_update_git_install}}"
   become_user: "{{python_pyenv_owner}}"
-  tags: python
 
 - name: Install python PyEnv-virtualenv plugin
   git:

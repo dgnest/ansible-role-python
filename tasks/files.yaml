@@ -8,4 +8,3 @@
     owner: "{{ item.owner }}"
   with_items: _python_create_files
   when: _python_create_files is defined
-  tag: python
