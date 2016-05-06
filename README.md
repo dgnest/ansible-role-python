@@ -8,7 +8,7 @@
 </span>
 
 
-Installs and configures [python][link-python] on a host.
+Ansible Galaxy role for [pyenv](link-pyenv).
 
 ## Requirements
 
@@ -18,19 +18,37 @@ Installs and configures [python][link-python] on a host.
    - none
 
 
+## Install
+
+Install it with the following command:
+
+```bash
+$ ansible-galaxy install hadenlabs.python
+```
+
+## Requirements
+
+none
+
 ## Role Variables
 
 The default role variables in `defaults/main.yml` are:
 
 ```yaml
     ---
-    # defaults file for python
-```
+    python_pyenv_path: "{{ ansible_env.HOME }}/pyenv"
+    python_pyenv_path: "{{ ansible_env.HOME }}/pyenv"
+    python_pyenv_owner: "{{ ansible_env.USER }}"
+    python_pyenv_python_versions: ["3.5.1"]
+    python_pyenv_virtualenvs: [{ venv_name: "latest", py_version: "3.5.1" }]
+    python_pyenv_update_git_install: no
 
+```
 
 ## Dependencies
 
-none
+None
+
 
 ## Example Playbook
 
@@ -53,6 +71,23 @@ To install a specific version:
       - { role: hadenlabs.python }
 ```
 
+```yaml
+    - hosts: servers
+      roles:
+         - role: hadenlabs.python
+           python_pyenv_path: "{{ home }}/pyenv"
+           python_pyenv_owner: "{{ instance_owner }}"
+           python_pyenv_update_git_install: no
+           python_pyenv_python_versions:
+             - "3.5.1"
+             - "2.7.9"
+           python_pyenv_virtualenvs:
+             - venv_name: "latest_v3"
+               py_version: "3.5.1"
+
+             - venv_name: "latest_v2"
+               py_version: "2.7.9"
+```
 
 ## Changelog
 
@@ -70,6 +105,6 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 <!-- Other -->
 
-[link-python]: https://www.python.org
+[link-pyenv]: https://github.com/yyuu/pyenv
 [link-luis]: https://github.com/luismayta
 [link-contributors]: contributors
