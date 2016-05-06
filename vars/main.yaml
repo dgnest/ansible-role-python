@@ -1,0 +1,25 @@
+---
+
+# vars file for python
+
+_python_pyenv_repo: https://github.com/yyuu/pyenv.git
+_python_pyenv_virtualenv_repo: https://github.com/yyuu/pyenv-virtualenv.git
+
+_python.templates:
+  - src: ".pyenvrc.j2"
+    dest: "{{ python_pyenv_path }}/.pyenvrc"
+    owner: "{{ python_pyenv_owner }}"
+    group: "{{ python_pyenv_owner }}"
+    mode: "0644"
+
+# _python_create_files:
+#   - path: "{{ _python_pyenv_install_dir }}"
+#     state: "directory"
+#     # group: "root"
+#     owner: "{{ user }}"
+#   - path: "{{ _python_pyenv_install_dir }}/shims"
+#     state: "directory"
+#     owner: "{{ user }}"
+#   - path: "{{ _python_pyenv_install_dir }}/versions"
+#     state: "directory"
+#     owner: "{{ user }}"
