@@ -7,6 +7,7 @@ _python_pyenv_repo: https://github.com/yyuu/pyenv.git
 _python_pyenv_virtualenv_repo: https://github.com/yyuu/pyenv-virtualenv.git
 
 _python_path_file_environmentrc: "{{ _python_home_user }}/.environmentrc"
+_python_path_file_pyenvrunrc: "{{ _python_home_user }}/.pyenvrunrc"
 
 _python:
   templates:
@@ -17,6 +18,11 @@ _python:
       mode: "0644"
     - src: ".environmentrc.j2"
       dest: "{{ _python_path_file_environmentrc }}"
+      owner: "{{ python_pyenv_owner }}"
+      group: "{{ python_pyenv_owner }}"
+      mode: "0644"
+    - src: ".pyenvrunrc.j2"
+      dest: "{{ _python_path_file_pyenvrunrc }}"
       owner: "{{ python_pyenv_owner }}"
       group: "{{ python_pyenv_owner }}"
       mode: "0644"
@@ -31,6 +37,7 @@ _python_package_dependencies:
   - wget
   - curl
   - llvm
+  - python-dev
   - libtiff5-dev
   - libjpeg8-dev
   - zlib1g-dev
@@ -40,3 +47,4 @@ _python_package_dependencies:
   - tcl8.5-dev
   - tk8.5-dev
   - python-tk
+  - libpq-dev
