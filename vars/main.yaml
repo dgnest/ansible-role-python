@@ -7,14 +7,15 @@ _python_pyenv_virtualenv_repo: https://github.com/yyuu/pyenv-virtualenv.git
 
 _python_path_file_environmentrc: "{{ ansible_env.HOME }}/.environmentrc"
 
-_python.templates:
-  - src: ".pyenvrc.j2"
-    dest: "{{ python_pyenv_path }}/.pyenvrc"
-    owner: "{{ python_pyenv_owner }}"
-    group: "{{ python_pyenv_owner }}"
-    mode: "0644"
-  - src: ".environmentrc.j2"
-    dest: "{{ _python_path_file_environmentrc }}"
-    owner: "{{ ansible_env.USER }}"
-    group: "{{ ansible_env.USER }}"
-    mode: "0644"
+_python:
+  templates:
+    - src: ".pyenvrc.j2"
+      dest: "{{ python_pyenv_path }}/.pyenvrc"
+      owner: "{{ python_pyenv_owner }}"
+      group: "{{ python_pyenv_owner }}"
+      mode: "0644"
+    - src: ".environmentrc.j2"
+      dest: "{{ _python_path_file_environmentrc }}"
+      owner: "{{ python_pyenv_owner }}"
+      group: "{{ python_pyenv_owner }}"
+      mode: "0644"
