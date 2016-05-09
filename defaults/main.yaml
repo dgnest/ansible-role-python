@@ -9,3 +9,4 @@ python_pyenv_virtualenvs:
   - { venv_name: "latest", py_version: "3.5.1" }
 
 python_pyenv_virtualenvs_default: "latest"
+python_pyenv_file_requeriments: "requirements.txt"

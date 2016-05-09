@@ -37,6 +37,7 @@ _python_package_dependencies:
   - wget
   - curl
   - llvm
+  - python-dev
   - libtiff5-dev
   - libjpeg8-dev
   - zlib1g-dev
@@ -46,3 +47,4 @@ _python_package_dependencies:
   - tcl8.5-dev
   - tk8.5-dev
   - python-tk
+  - libpq-dev
