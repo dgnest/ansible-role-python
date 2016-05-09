@@ -5,7 +5,7 @@
               regexp="\.environmentrc"
               line="source {{ _python_path_file_environmentrc }}"
               state=present
-  become_user: "{{ ansible_env.USER }}"
+  become_user: "{{python_pyenv_owner}}"
 
 - name: Modify .bashrc
   lineinfile: dest="~/.bashrc"

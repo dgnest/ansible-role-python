@@ -1,11 +1,12 @@
 ---
 
 # vars file for python
+_python_home_user: "/home/{{ python_pyenv_owner }}"
 
 _python_pyenv_repo: https://github.com/yyuu/pyenv.git
 _python_pyenv_virtualenv_repo: https://github.com/yyuu/pyenv-virtualenv.git
 
-_python_path_file_environmentrc: "{{ ansible_env.HOME }}/.environmentrc"
+_python_path_file_environmentrc: "{{ _python_home_user }}/.environmentrc"
 
 _python:
   templates:
