@@ -20,4 +20,6 @@
 
 - include: environment.yaml
 
+- include: delete_virtualenvs.yaml
+
 - include: post_install.yaml
