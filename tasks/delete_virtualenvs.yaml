@@ -8,10 +8,10 @@
     - check
 
 - name: Delete virtual environments
-  shell: . {{ python_pyenv_path }}/.pyenvrc && pyenv virtualenv-delete {{ item.venv_name }}
+  shell: . {{ python_pyenv_path }}/.pyenvrc && pyenv virtualenv-delete --force {{ item.venv_name }}
          removes="{{ python_pyenv_path }}/versions/{{ item.venv_name }}/bin/python"
   with_items: "{{python_pyenv_delete_virtualenvs}}"
   become_user: "{{python_pyenv_owner}}"
   when: python_pyenv_delete_virtualenvs is defined
-  when: python_virtualenvs_exist.stat.islnk is defined
+  when: _python_virtualenvs_exist.stat.islnk is defined
   ignore_errors: True
