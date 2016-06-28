@@ -81,6 +81,8 @@ To install a specific version:
            python_pyenv_python_versions:
              - "3.5.1"
              - "2.7.9"
+           python_pyenv_delete_virtualenvs:
+             - venv_name: "delete_venv_name"
            python_pyenv_virtualenvs:
              - venv_name: "latest_v3"
                py_version: "3.5.1"
