@@ -3,8 +3,8 @@
 galaxy_info:
   author: Luis Mayta
   description: Ansible role to services Python
-  company: Hadenlabs
-  version: 0.1.4
+  company: Dgnest
+  version: 0.1.5
   license: Mit
   min_ansible_version: 1.4
   #
