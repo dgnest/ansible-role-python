@@ -1,9 +1,9 @@
 # Ansible Role Python
 
 <span class="badges" align="center">
-[![Build Status](https://travis-ci.org/hadenlabs/ansible-role-python.svg)](https://travis-ci.org/hadenlabs/ansible-role-python)
-[![Stories in Ready](https://badge.waffle.io/hadenlabs/ansible-role-python.svg?label=ready&title=Ready)](http://waffle.io/hadenlabs/ansible-role-python)
-[![GitHub issues](https://img.shields.io/github/issues/hadenlabs/ansible-role-python.svg)](https://github.com/hadenlabs/ansible-role-python/issues)
+[![Build Status](https://travis-ci.org/dgnest/ansible-role-python.svg)](https://travis-ci.org/dgnest/ansible-role-python)
+[![Stories in Ready](https://badge.waffle.io/dgnest/ansible-role-python.svg?label=ready&title=Ready)](http://waffle.io/dgnest/ansible-role-python)
+[![GitHub issues](https://img.shields.io/github/issues/dgnest/ansible-role-python.svg)](https://github.com/dgnest/ansible-role-python/issues)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](LICENSE)
 </span>
 
@@ -23,7 +23,7 @@ Ansible Galaxy role for [pyenv](link-pyenv).
 Install it with the following command:
 
 ```bash
-$ ansible-galaxy install hadenlabs.python
+$ ansible-galaxy install dgnest.python
 ```
 
 ## Requirements
@@ -60,7 +60,7 @@ To run this playbook with default settings, create a basic playbook like this:
 ```yaml
     - hosts: servers
       roles:
-        - hadenlabs.python
+        - dgnest.python
 ```
 
 
@@ -69,13 +69,13 @@ To install a specific version:
 ```yaml
   - hosts: servers
     roles:
-      - { role: hadenlabs.python }
+      - { role: dgnest.python }
 ```
 
 ```yaml
     - hosts: servers
       roles:
-         - role: hadenlabs.python
+         - role: dgnest.python
            python_pyenv_path: "{{ home }}/pyenv"
            python_pyenv_owner: "{{ instance_owner }}"
            python_pyenv_update_git_install: no
@@ -102,7 +102,8 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [Luis Mayta][link-luis]
+Made with :heart: ️:coffee:️ and :pizza: by [dgnest][link-company].
+
 - [All Contributors][link-contributors]
 
 
@@ -110,4 +111,5 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 [link-pyenv]: https://github.com/yyuu/pyenv
 [link-luis]: https://github.com/luismayta
-[link-contributors]: contributors
+[link-contributors]: AUTHORS
+[link-company]: https://github.com/dgnest
