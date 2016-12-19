@@ -11,6 +11,7 @@
     repo: "{{ _python_pyenv_repo }}"
     dest: "{{ python_pyenv_path }}"
     update: "{{python_pyenv_update_git_install}}"
+  become: true
   become_user: "{{python_pyenv_owner}}"
 
 - name: Install python PyEnv-virtualenv plugin
@@ -18,4 +19,5 @@
     repo: "{{_python_pyenv_virtualenv_repo}}"
     dest: "{{ python_pyenv_path }}/plugins/pyenv-virtualenv"
     update: "{{python_pyenv_update_git_install}}"
+  become: true
   become_user: "{{python_pyenv_owner}}"
