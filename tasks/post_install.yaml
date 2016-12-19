@@ -13,7 +13,8 @@
   become_user: "{{python_pyenv_owner}}"
 
 - name: Install package requeriments virtualenv
-  sudo_user: "{{python_pyenv_owner}}"
+  become: true
+  become_user: "{{python_pyenv_owner}}"
   shell: ". {{ _python_path_file_pyenvrunrc }} && pip install -r {{python_pyenv_file_requeriments}}"
   # executable: "/bin/bash"
   # become_user: "{{python_pyenv_owner}}"

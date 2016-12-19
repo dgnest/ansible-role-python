@@ -1,7 +1,7 @@
 ---
 
 - name: Install python package dependencies
-  sudo: yes
+  become: true
   apt:
     name: "{{ item }}"
     state: present
