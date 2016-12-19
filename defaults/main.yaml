@@ -2,7 +2,7 @@
 # defaults file for python
 python_pyenv_path: "{{ ansible_env.HOME }}/pyenv"
 python_pyenv_owner: "{{ ansible_env.USER }}"
-python_pyenv_update_git_install: yes
+python_pyenv_update_git_install: true
 python_pyenv_python_versions:
   - 3.5.1
 python_pyenv_delete_virtualenvs:
