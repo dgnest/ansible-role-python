@@ -11,6 +11,7 @@
     repo: "{{ _python_pyenv_repo }}"
     dest: "{{ python_pyenv_path }}"
     update: "{{python_pyenv_update_git_install}}"
+    version: master
   become: true
   become_user: "{{python_pyenv_owner}}"
 
@@ -19,5 +20,6 @@
     repo: "{{_python_pyenv_virtualenv_repo}}"
     dest: "{{ python_pyenv_path }}/plugins/pyenv-virtualenv"
     update: "{{python_pyenv_update_git_install}}"
+    version: master
   become: true
   become_user: "{{python_pyenv_owner}}"
