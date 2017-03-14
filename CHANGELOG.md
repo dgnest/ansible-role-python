@@ -5,7 +5,8 @@ This file uses change log convention from [Keep a CHANGELOG](http://keepachangel
 ## [Unreleased][unreleased]
 
 
-[unreleased]: https://github.com/dgnest/ansible-role-python/compare/0.1.9...HEAD
+[unreleased]: https://github.com/dgnest/ansible-role-python/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/dgnest/ansible-role-python/compare/0.1.9...0.2.0
 [0.1.9]: https://github.com/dgnest/ansible-role-python/compare/0.1.8...0.1.9
 [0.1.8]: https://github.com/dgnest/ansible-role-python/compare/0.1.7...0.1.8
 [0.1.7]: https://github.com/dgnest/ansible-role-python/compare/0.1.6...0.1.7
