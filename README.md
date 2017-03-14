@@ -37,11 +37,10 @@ The default role variables in `defaults/main.yml` are:
 ```yaml
     ---
     python_pyenv_path: "{{ ansible_env.HOME }}/pyenv"
-    python_pyenv_path: "{{ ansible_env.HOME }}/pyenv"
     python_pyenv_owner: "{{ ansible_env.USER }}"
-    python_pyenv_python_versions: ["3.5.2"]
+    python_pyenv_python_versions: ["3.6.0"]
     python_pyenv_delete_virtualenvs: [{ venv_name: "latest" }]
-    python_pyenv_virtualenvs: [{ venv_name: "latest", py_version: "3.5.2" }]
+    python_pyenv_virtualenvs: [{ venv_name: "latest", py_version: "3.6.0" }]
     python_pyenv_update_git_install: no
 
 ```
