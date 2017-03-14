@@ -8,3 +8,5 @@
   register: install_python_package_dependencies
   when: _python_package_dependencies is defined
   with_items: "{{ _python_package_dependencies | default([]) }}"
+  tags:
+    - dependences
